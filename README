@@ -3,19 +3,22 @@ NAME
     fmppffmmmpppfmmpmfmmmfmpmppfmm fmpppf mmmpppmpm mpfpffppfppm
     PmpmppppppppffmFmmpfmmppmmmpmp
 
+VERSION
+    version 1.02
+
 SYNOPSIS
             # A Kennyspeak echo server
 
             use strict;
             use warnings;
-            
-        use POE;
+
+            use POE;
             use POE::Component::Server::TCP;
             use POE::Filter::Stackable;
             use POE::Filter::Line;
             use POE::Filter::KennySpeak;
-            
-        POE::Component::Server::TCP->new(
+
+            POE::Component::Server::TCP->new(
                 Port => 12345,
                 ClientInputFilter => POE::Filter::Stackable->new(
                     Filters => [
@@ -29,8 +32,8 @@ SYNOPSIS
                   return;
                 },
             );
-            
-        POE::Kernel->run();
+
+            POE::Kernel->run();
             exit;
 
 DESCRIPTION
@@ -61,9 +64,7 @@ METHODS
     "clone"
         Makes a copy of the filter and clears the buffer of the copy.
 
-AUTHOR
-    Chris "BinGOs" Williams <chris@bingosnet.co.uk>
-
+KUDOS
     Based on kenny.pl by:
 
     Christian Garbs <mitch@cgarbs.de>, http://www.cgarbs.de Alan Eldridge
@@ -71,13 +72,6 @@ AUTHOR
 
     KennySpeak invented by Kohan Ikin <syneryder@namesuppressed.com>
     http://www.namesuppressed.com/kenny/
-
-LICENSE
-    Copyright "(c)" 2008 Chris Williams, Christian Garbs and Alan Eldridge
-
-    This module may be used, modified, and distributed under the same terms
-    as Perl itself. Please see the license that came with your Perl
-    distribution for details.
 
 SEE ALSO
     POE::Filter
@@ -87,4 +81,14 @@ SEE ALSO
     <http://www.cgarbs.de/kenny.en.html>
 
     <http://www.namesuppressed.com/kenny/>
+
+AUTHOR
+    Chris Williams <chris@bingosnet.co.uk>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by Chris Williams, Christian Garbs
+    and Alan Eldridge.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 
